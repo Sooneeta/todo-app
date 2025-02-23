@@ -168,7 +168,7 @@
 .header-section {
   border-bottom-right-radius: 60%;
   border-bottom-left-radius: 60%;
-  height: 15vh;
+  height: 10vh;
 }
 
 .context-menu {
@@ -273,14 +273,6 @@
 
   .task-icon {
     width: 3vw;
-  }
-
-  .header-section {
-    height: 12vh;
-  }
-
-  .footer-section {
-    height: 8vh;
   }
 
   .todo-form-wrapper {
