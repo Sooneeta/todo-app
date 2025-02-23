@@ -56,7 +56,7 @@
 
 .filter-menu {
   position: fixed;
-  top: 30%;
+  top: 26.8%;
   right: 10%;
 }
 
@@ -91,7 +91,7 @@
 .todo-form-wrapper {
   width: 75%;
   align-items: center;
-  gap: 5em;
+  gap: 3.5em;
 }
 
 .todo-form-wrapper > h2 {
@@ -110,7 +110,7 @@
   height: 28vh;
   border-radius: 20px;
   padding: 1.5em;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .todo-form-wrapper > div > button {
@@ -121,6 +121,14 @@
   border: none;
   padding: 0.3em 0.6em;
   border-radius: 2px;
+  cursor: pointer;
+}
+
+.empty-warning-icon {
+  width: 1.5vw;
+  max-width: 50px;
+  min-width: 20px;
+  height: auto;
 }
 
 .header-section {
@@ -198,8 +206,8 @@
 }
 
 .spinner {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: 6px solid #e9ecef;
   border-top: 6px solid #007bff;
   border-radius: 50%;

@@ -84,6 +84,7 @@
   width: 50%;
   padding: 0.3em 0em;
   border-radius: 4em;
+  cursor: pointer;
 }
 
 .todo-list-header {
@@ -117,6 +118,18 @@
   padding: 0.3em 0.2em;
   border-radius: 5px;
   background: none;
+  cursor: pointer;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+  background-color: #4682b4;
+  color: white;
+}
+
+.filter-button:hover .filter-icon,
+.filter-button:focus .filter-icon {
+  filter: brightness(0) invert(1);
 }
 
 .filter-button > p {
@@ -190,7 +203,7 @@
   }
 
   .filter-button {
-    width: 6vw;
+    width: 5vw;
   }
 
   .file-icon {

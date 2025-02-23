@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 import "../styles/components.css";
+import WarningIcon from "../assets/images/warning.svg";
 
 const TodoForm = (props) => {
   const { title, btnText, updatedTodo } = props;
@@ -20,7 +21,7 @@ const TodoForm = (props) => {
 
   const handleFormBtn = () => {
     if (inputValue.trim() === "") {
-      setError("*Please enter a todo");
+      setError("Please enter a todo");
       return;
     }
     setError(" ");
@@ -44,15 +45,22 @@ const TodoForm = (props) => {
           onChange={(e) => setInputValue(e.target.value)}
         />
         {error && (
-          <p
+          <div
             style={{
+              display: "flex",
+              gap: "0.5em",
               color: "red",
-              alignSelf: "flex-start",
               paddingLeft: "1em",
+              alignItems: "center",
             }}
           >
-            {error}
-          </p>
+            <img
+              src={WarningIcon}
+              alt="empty-warning-icon"
+              className="empty-warning-icon"
+            />
+            <p style={{}}>{error}</p>
+          </div>
         )}
         <button onClick={handleFormBtn}>{btnText}</button>
       </div>

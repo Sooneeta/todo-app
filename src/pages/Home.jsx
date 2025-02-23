@@ -3,7 +3,7 @@ import { useTodo } from "../context/TodoContext";
 import { useState, useEffect, useRef } from "react";
 import SelectMenu from "../components/SelectMenu";
 import FilterIcon from "../assets/images/filter.svg";
-import FileIcon from "../assets/images/file.svg";
+import NoResultIcon from "../assets/images/noresult.svg";
 import DeleteDialog from "../components/DeleteDialog";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { Loader } from "../components/Loader";
@@ -157,7 +157,7 @@ const Home = () => {
                     ))
                   ) : (
                     <div className="empty-section">
-                      <img src={FileIcon} className="file-icon" />
+                      <img src={NoResultIcon} className="file-icon" />
                       <p>No Data Found</p>
                     </div>
                   )}
@@ -168,7 +168,9 @@ const Home = () => {
           </DragDropContext>
         )}
       </div>
-      <button onClick={handleAddTodo}>Add Todo</button>
+      <button onClick={handleAddTodo}>
+        {loading ? "Adding..." : "Add Todo"}
+      </button>
       <div ref={contextMenuRef} className="context-menu">
         {showContextMenu && (
           <SelectMenu
