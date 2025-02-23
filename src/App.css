@@ -19,7 +19,7 @@
   justify-content: space-between;
   text-align: center;
   gap: 3em;
-  padding: 3em 2.5em 1.5em 2.5em;
+  padding: 1em 2.5em;
 }
 
 .todo-list-item-wrapper {
@@ -114,14 +114,14 @@
   justify-content: center;
   gap: 0.2em;
   border: 1px solid #4682b4;
-  padding: 0.3em 0.2em;
+  padding: 0.3em;
   border-radius: 5px;
   background: none;
 }
 
 .filter-button > p {
   font-family: sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .file-icon {
@@ -135,11 +135,7 @@
 }
 
 .empty-section > p {
-  font-size: 1rem;
-}
-
-.empty-section > p {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 
 @media (min-width: 481px) and (max-width: 768px) {

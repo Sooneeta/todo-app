@@ -39,11 +39,15 @@ const Home = () => {
 
   const handleTouchStart = (todo, e) => {
     e.preventDefault();
+    e.preventDefault();
     isDragging.current = false;
+    document.body.style.pointerEvents = "none";
+
     touchTimer.current = setTimeout(() => {
       if (!isDragging.current) {
         handleContextMenu(todo, e);
       }
+      document.body.style.pointerEvents = "auto";
     }, 500);
   };
 
@@ -52,12 +56,16 @@ const Home = () => {
       clearTimeout(touchTimer.current);
     }
     isDragging.current = true;
+
+    document.body.style.pointerEvents = "auto";
   };
 
   const handleTouchEnd = () => {
     if (touchTimer.current) {
       clearTimeout(touchTimer.current);
     }
+
+    document.body.style.pointerEvents = "auto";
   };
 
   const handleDragEnd = (result) => {
@@ -185,15 +193,7 @@ const Home = () => {
         )}
       </div>
       <button onClick={handleAddTodo}>Add Todo</button>
-      <div
-        ref={contextMenuRef}
-        className="context-menu"
-        // style={{
-        //   top: `${contextMenuPosition.y}px`,
-        //   left: `${contextMenuPosition.x}px`,
-        //   zIndex: 1000,
-        // }}
-      >
+      <div ref={contextMenuRef} className="context-menu">
         {showContextMenu && (
           <SelectMenu
             menu={contextMenu}
