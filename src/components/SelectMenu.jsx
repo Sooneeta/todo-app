@@ -52,7 +52,10 @@ const SelectMenu = ({ menu, selectedTodo, setShowDeleteDialog }) => {
           <li key={index} onClick={(e) => handleMenu(value, e)}>
             {value}
             {index === menu.length - 1 && menuSubString && (
-              <span> {menuSubString}</span>
+              <span>
+                {""}
+                {menuSubString}
+              </span>
             )}
             <span
               className={`checkmark ${
