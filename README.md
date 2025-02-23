@@ -57,9 +57,6 @@ Follow these steps to set up and run the Todo App on your local machine:
 ### State Management
 - The app uses the Context API to manage global state (`TodoContext`).
 
-### Styling and UI
-- The app includes custom CSS for styling.
-
 
 ### Developed by Sunita Thapa
 
