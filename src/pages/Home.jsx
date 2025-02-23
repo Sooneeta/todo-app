@@ -168,9 +168,7 @@ const Home = () => {
           </DragDropContext>
         )}
       </div>
-      <button onClick={handleAddTodo}>
-        {loading ? "Adding..." : "Add Todo"}
-      </button>
+      <button onClick={handleAddTodo}>Add Todo</button>
       <div ref={contextMenuRef} className="context-menu">
         {showContextMenu && (
           <SelectMenu
