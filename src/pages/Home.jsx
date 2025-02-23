@@ -160,9 +160,9 @@ const Home = () => {
                             {...provided.dragHandleProps}
                             className="todo-list-item"
                             onContextMenu={(e) => handleContextMenu(todo, e)}
-                            onTouchStart={(e) => handleTouchStart(todo, e)}
-                            onTouchMove={handleTouchMove}
-                            onTouchEnd={handleTouchEnd}
+                            // onTouchStart={(e) => handleTouchStart(todo, e)}
+                            // onTouchMove={handleTouchMove}
+                            // onTouchEnd={handleTouchEnd}
                           >
                             <input
                               type="checkbox"
