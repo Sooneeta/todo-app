@@ -19,7 +19,6 @@ const Home = () => {
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const contextMenuRef = useRef(null);
   const touchTimer = useRef(null);
-  const isDragging = useRef(false);
   const [isPageLoaded, setIsPageLoaded] = useState(false);
 
   const handleAddTodo = () => {
@@ -31,41 +30,19 @@ const Home = () => {
     e.stopPropagation();
     setSelectedTodo(todo);
     setShowContextMenu(!showContextMenu);
-    // setContextMenuPosition({
-    //   x: e.clientX || e.touches[0].clientX,
-    //   y: e.clientY || e.touches[0].clientY,
-    // });
   };
 
   const handleTouchStart = (todo, e) => {
     e.preventDefault();
-    e.preventDefault();
-    isDragging.current = false;
-    document.body.style.pointerEvents = "none";
-
     touchTimer.current = setTimeout(() => {
-      if (!isDragging.current) {
-        handleContextMenu(todo, e);
-      }
-      document.body.style.pointerEvents = "auto";
+      handleContextMenu(todo, e);
     }, 500);
-  };
-
-  const handleTouchMove = () => {
-    if (touchTimer.current) {
-      clearTimeout(touchTimer.current);
-    }
-    isDragging.current = true;
-
-    document.body.style.pointerEvents = "auto";
   };
 
   const handleTouchEnd = () => {
     if (touchTimer.current) {
       clearTimeout(touchTimer.current);
     }
-
-    document.body.style.pointerEvents = "auto";
   };
 
   const handleDragEnd = (result) => {
@@ -160,9 +137,8 @@ const Home = () => {
                             {...provided.dragHandleProps}
                             className="todo-list-item"
                             onContextMenu={(e) => handleContextMenu(todo, e)}
-                            // onTouchStart={(e) => handleTouchStart(todo, e)}
-                            // onTouchMove={handleTouchMove}
-                            // onTouchEnd={handleTouchEnd}
+                            onTouchStart={(e) => handleTouchStart(todo, e)}
+                            onTouchEnd={handleTouchEnd}
                           >
                             <input
                               type="checkbox"
