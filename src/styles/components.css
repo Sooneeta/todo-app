@@ -157,6 +157,7 @@
   font-size: 1rem;
   align-self: flex-start;
   padding-left: 0.5em;
+  cursor: pointer;
 }
 
 .header-section,
@@ -168,6 +169,10 @@
   border-bottom-right-radius: 60%;
   border-bottom-left-radius: 60%;
   height: 15vh;
+}
+
+.context-menu {
+  position: fixed;
 }
 
 .footer-section {

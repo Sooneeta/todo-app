@@ -35,10 +35,10 @@ const Home = () => {
     e.stopPropagation();
     setSelectedTodo(todo);
     setShowContextMenu(!showContextMenu);
-    setContextMenuPosition({
-      x: e.clientX || e.touches[0].clientX,
-      y: e.clientY || e.touches[0].clientY,
-    });
+    // setContextMenuPosition({
+    //   x: e.clientX || e.touches[0].clientX,
+    //   y: e.clientY || e.touches[0].clientY,
+    // });
   };
 
   const handleTouchStart = (todo, e) => {
@@ -98,7 +98,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="homepage-wrapper" style={{ position: "relative" }}>
+    <div className="homepage-wrapper">
       <div className="todo-list">
         <div className="todo-list-header">
           <div
@@ -137,7 +137,7 @@ const Home = () => {
               {(provided) => (
                 <div
                   className={`todo-list-item-wrapper ${
-                    isPageLoaded ? "animate-todo-list-item-wrapper" : "" // Add animation class when page is loaded
+                    isPageLoaded ? "animate-todo-list-item-wrapper" : ""
                   }`}
                   ref={provided.innerRef}
                   {...provided.droppableProps}
@@ -191,11 +191,12 @@ const Home = () => {
       <button onClick={handleAddTodo}>Add Todo</button>
       <div
         ref={contextMenuRef}
-        style={{
-          top: `${contextMenuPosition.y}px`,
-          left: `${contextMenuPosition.x}px`,
-          zIndex: 1000,
-        }}
+        className="context-menu"
+        // style={{
+        //   top: `${contextMenuPosition.y}px`,
+        //   left: `${contextMenuPosition.x}px`,
+        //   zIndex: 1000,
+        // }}
       >
         {showContextMenu && (
           <SelectMenu
