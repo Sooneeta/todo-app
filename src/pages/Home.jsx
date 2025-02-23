@@ -17,10 +17,6 @@ const Home = () => {
   const filterMenu = ["All", "Completed TODOs", "Incompleted TODOs"];
   const { todos, updateTodo, setOriginalTodos, loading } = useTodo();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
-  const [contextMenuPosition, setContextMenuPosition] = useState({
-    x: 0,
-    y: 0,
-  });
   const contextMenuRef = useRef(null);
   const touchTimer = useRef(null);
   const isDragging = useRef(false);

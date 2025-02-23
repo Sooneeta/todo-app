@@ -117,7 +117,7 @@
   align-self: flex-end;
   background-color: #4682b4;
   color: white;
-  font-size: 1.3rem;
+  font-size: 1rem;
   border: none;
   padding: 0.3em 0.6em;
   border-radius: 2px;
@@ -132,7 +132,7 @@
 }
 
 .header-section h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .layout-container {
@@ -186,7 +186,7 @@
 }
 
 .task-icon {
-  width: 10vw;
+  width: 8vw;
 }
 
 .loader {
