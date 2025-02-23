@@ -125,13 +125,17 @@
 }
 
 .file-icon {
-  width: 35%;
+  width: 25%;
 }
 
 .empty-section {
   align-items: center;
-  padding-top: 5em;
+  padding-top: 4em;
   gap: 1em;
+}
+
+.empty-section > p {
+  font-size: 1rem;
 }
 
 .empty-section > p {
@@ -203,6 +207,10 @@
   }
 
   .todo-list-item {
+    font-size: 1rem;
+  }
+
+  .empty-section > p {
     font-size: 1rem;
   }
 }
