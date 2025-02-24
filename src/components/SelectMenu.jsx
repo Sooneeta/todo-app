@@ -7,14 +7,12 @@ import "../styles/components.css";
 
 const SelectMenu = ({ menu, selectedTodo, setShowDeleteDialog }) => {
   const [menuSubString, setMenuSubString] = useState("");
-  const { updateTodo, filterTodo } = useTodo();
+  const { updateTodo, filterTodo, selectedFilter } = useTodo();
   const navigate = useNavigate();
-  const [selectedOption, setSelectedOption] = useState("");
 
   const handleMenu = (option, e) => {
     e.preventDefault();
     e.stopPropagation();
-    setSelectedOption(option);
     switch (option) {
       case "Edit":
         navigate(`/edit?todoId=${selectedTodo.id}`);
@@ -56,7 +54,7 @@ const SelectMenu = ({ menu, selectedTodo, setShowDeleteDialog }) => {
             )}
             <span
               className={`checkmark ${
-                selectedOption === value ? "visible" : ""
+                selectedFilter === value ? "visible" : ""
               }`}
             >
               <GiCheckMark />

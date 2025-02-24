@@ -10,6 +10,7 @@ export const TodoContextProvider = ({ children }) => {
   });
   const [todos, setTodos] = useState(originalTodos);
   const [loading, setLoading] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState("All");
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(originalTodos));
@@ -49,7 +50,9 @@ export const TodoContextProvider = ({ children }) => {
   };
 
   const filterTodo = (filter) => {
+    setSelectedFilter(filter);
     setLoading(true);
+
     switch (filter) {
       case "Completed TODOs":
         setTodos(originalTodos.filter((todo) => todo.isComplete === true));
@@ -76,6 +79,7 @@ export const TodoContextProvider = ({ children }) => {
         filterTodo,
         setOriginalTodos,
         loading,
+        selectedFilter,
       }}
     >
       {children}
