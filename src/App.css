@@ -58,7 +58,6 @@
   font-size: 1rem;
 }
 
-.active-todo,
 .todo-list-item:hover,
 .todo-list-item:focus {
   border: 1.8px solid #2f92e2;
@@ -141,6 +140,9 @@
 .filter-button:focus {
   background-color: #6f8faf;
   color: white;
+}
+
+.active-filter {
   border: 1px solid #ff8c00;
 }
 

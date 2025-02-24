@@ -7,8 +7,7 @@ import "../styles/components.css";
 
 const SelectMenu = ({ menu, selectedTodo, setShowDeleteDialog }) => {
   const [menuSubString, setMenuSubString] = useState("");
-  const { updateTodo, filterTodo, selectedFilter, setOriginalTodos } =
-    useTodo();
+  const { filterTodo, selectedFilter, setOriginalTodos } = useTodo();
   const navigate = useNavigate();
 
   const handleMenu = (option, e) => {
