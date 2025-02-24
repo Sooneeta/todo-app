@@ -15,7 +15,7 @@ const Home = () => {
   const [selectedTodo, setSelectedTodo] = useState();
   const contextMenu = ["Edit", "Delete", "Mark as"];
   const filterMenu = ["All", "Completed TODOs", "Incompleted TODOs"];
-  const { todos, updateTodo, setOriginalTodos, loading } = useTodo();
+  const { todos, setOriginalTodos, loading } = useTodo();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
   const contextMenuRef = useRef(null);
   const touchTimer = useRef(null);
@@ -58,6 +58,14 @@ const Home = () => {
       reorderedTodos.splice(destination.index, 0, movedTodo);
       return reorderedTodos;
     });
+  };
+
+  const handleCheckboxChange = (todo) => {
+    setOriginalTodos((prevTodos) =>
+      prevTodos.map((t) =>
+        t.id === todo.id ? { ...t, isComplete: !t.isComplete } : t
+      )
+    );
   };
 
   useEffect(() => {
@@ -149,12 +157,7 @@ const Home = () => {
                             <input
                               type="checkbox"
                               checked={todo.isComplete}
-                              onChange={() => {
-                                updateTodo(
-                                  { ...todo, isComplete: !todo.isComplete },
-                                  index
-                                );
-                              }}
+                              onChange={() => handleCheckboxChange(todo)}
                             />
                             <p>{todo.todo}</p>
                           </section>

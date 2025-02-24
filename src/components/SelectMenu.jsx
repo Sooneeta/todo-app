@@ -7,7 +7,8 @@ import "../styles/components.css";
 
 const SelectMenu = ({ menu, selectedTodo, setShowDeleteDialog }) => {
   const [menuSubString, setMenuSubString] = useState("");
-  const { updateTodo, filterTodo, selectedFilter } = useTodo();
+  const { updateTodo, filterTodo, selectedFilter, setOriginalTodos } =
+    useTodo();
   const navigate = useNavigate();
 
   const handleMenu = (option, e) => {
@@ -21,8 +22,13 @@ const SelectMenu = ({ menu, selectedTodo, setShowDeleteDialog }) => {
         setShowDeleteDialog(true);
         break;
       case "Mark as":
-        updateTodo({ ...selectedTodo, isComplete: !selectedTodo.isComplete });
-        navigate("/");
+        setOriginalTodos((prevTodos) =>
+          prevTodos.map((todo) =>
+            todo.id === selectedTodo.id
+              ? { ...todo, isComplete: !todo.isComplete }
+              : todo
+          )
+        );
         break;
       case "All":
         filterTodo("All");
