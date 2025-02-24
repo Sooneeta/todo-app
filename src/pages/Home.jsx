@@ -91,7 +91,9 @@ const Home = () => {
           >
             <h3>Todo List</h3>
             <button
-              className="filter-button"
+              className={`filter-button ${
+                showFilterMenu ? "active-filter" : ""
+              }`}
               onClick={() => setShowFilterMenu(!showFilterMenu)}
             >
               <img src={FilterIcon} className="filter-icon" />
@@ -135,7 +137,11 @@ const Home = () => {
                             ref={provided.innerRef}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
-                            className="todo-list-item"
+                            className={`todo-list-item ${
+                              showContextMenu && selectedTodo?.id === todo.id
+                                ? "active-todo"
+                                : ""
+                            }`}
                             onContextMenu={(e) => handleContextMenu(todo, e)}
                             onTouchStart={(e) => handleTouchStart(todo, e)}
                             onTouchEnd={handleTouchEnd}

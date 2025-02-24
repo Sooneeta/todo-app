@@ -119,9 +119,17 @@
   color: white;
   font-size: 1rem;
   border: none;
-  padding: 0.3em 0.6em;
-  border-radius: 2px;
+  padding: 0.3em 1em;
+  border-radius: 10em;
   cursor: pointer;
+  margin-right: 0.3em;
+}
+
+.todo-form-wrapper > div > button:hover,
+.todo-form-wrapper > div > button:focus {
+  color: #4682b4;
+  background-color: white;
+  border: 1.8px solid #4682b4;
 }
 
 .empty-warning-icon {

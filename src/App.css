@@ -58,6 +58,17 @@
   font-size: 1rem;
 }
 
+.active-todo,
+.todo-list-item:hover,
+.todo-list-item:focus {
+  border: 1.8px solid #2f92e2;
+  transform: scale(1.04);
+}
+
+.active-todo {
+  box-shadow: 0 0 0 1.2px #ff8c00;
+}
+
 .todo-list-item > p {
   white-space: nowrap;
   overflow: auto;
@@ -76,15 +87,19 @@
   flex-shrink: 0;
 }
 
+.homepage-wrapper > button,
+.filter-button {
+  cursor: pointer;
+  color: #4682b4;
+  background: none;
+}
+
 .homepage-wrapper > button {
-  background-color: #4682b4;
-  color: white;
-  border: none;
   font-size: 1.1rem;
   width: 50%;
   padding: 0.3em 0em;
+  border: 1.8px solid #4682b4;
   border-radius: 4em;
-  cursor: pointer;
 }
 
 .todo-list-header {
@@ -117,16 +132,19 @@
   border: 1px solid #4682b4;
   padding: 0.3em 0.2em;
   border-radius: 5px;
-  background: none;
-  cursor: pointer;
 }
 
+.active-filter,
+.homepage-wrapper > button:hover,
+.homepage-wrapper > button:focus,
 .filter-button:hover,
 .filter-button:focus {
-  background-color: #4682b4;
+  background-color: #6f8faf;
   color: white;
+  border: 1px solid #ff8c00;
 }
 
+.active-filter .filter-icon,
 .filter-button:hover .filter-icon,
 .filter-button:focus .filter-icon {
   filter: brightness(0) invert(1);
